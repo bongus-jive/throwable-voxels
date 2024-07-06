@@ -1,0 +1,36 @@
+{
+  "projectileName": "pat_throwablevoxel_2k",
+  "image": "invisible.png",
+  "timeToLive": 0.05,
+  "damageType": "NoDamage",
+  "onlyHitTerrain": true,
+  "power": 2000,
+
+  "movementSettings": {
+    "collisionEnabled": false
+  },
+
+  "periodicActions": [
+    {
+      "time": 0,
+      "repeat": false,
+      "action": "projectile",
+      "type": "pat_throwablevoxel_1k",
+      "inheritDamageFactor": 0.5,
+      "autoFlipAdjust": true,
+      "angleAdjust": 4,
+      "fuzzAngle": 3,
+      "delaySteps": 3
+    },
+    {
+      "time": 0,
+      "repeat": false,
+      "action": "projectile",
+      "type": "pat_throwablevoxel_1k",
+      "inheritDamageFactor": 0.5,
+      "autoFlipAdjust": true,
+      "angleAdjust": -4,
+      "fuzzAngle": 3
+    }
+  ]
+}

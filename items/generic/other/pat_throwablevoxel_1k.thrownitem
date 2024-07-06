@@ -1,0 +1,14 @@
+{
+  "itemName": "voxel1k",
+  "builder": "/items/generic/other/pat_throwablevoxel.lua",
+  "originalItem": "/items/generic/other/voxel1k.item",
+
+  "image": "/pat/throwablevoxels/voxel1k.png?flipx",
+
+  "edgeTrigger": true,
+  "ammoUsage": 1,
+  "windupTime": 0,
+  "cooldown": 0.1,
+  "projectileType": "pat_throwablevoxel_1k",
+  "projectileConfig": { }
+}

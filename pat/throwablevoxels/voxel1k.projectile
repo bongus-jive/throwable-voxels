@@ -1,0 +1,61 @@
+{
+  "projectileName": "pat_throwablevoxel_1k",
+  "image": "voxel1k.png",
+  "flippable": false,
+  "orientationLocked": true,
+  "timeToLive": 5,
+  "speed": 75,
+  "power": 1000,
+  "knockback": 5,
+  "damageType": "IgnoresDef",
+  "damagePoly": [ [ 4, 4 ], [ 4, -4 ], [ -4, -4 ], [ -4, 4 ] ],
+
+  "movementSettings": {
+    "mass": 0.75,
+    "gravityMultiplier": 1,
+    "bounceFactor": 0.65,
+    "stopOnFirstBounce": true
+  },
+
+  "periodicActions": [
+    {
+      "time": 0,
+      "repeat": false,
+      "action": "sound",
+      "options": [ "/sfx/projectiles/throw_item_small.ogg" ]
+    }
+  ],
+
+  "actionOnReap": [
+    {
+      "action": "loop",
+      "count": 20,
+      "body": [
+        {
+          "action": "projectile",
+          "type": "money",
+          "fuzzAngle": 360,
+          "config": {
+            "speed": 18,
+            "bounces": 0,
+            "onlyHitTerrain": true,
+            "actionOnReap": [
+              {
+                "action": "item",
+                "name": "money",
+                "count": 50
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "action": "sound",
+      "options": [ "/sfx/objects/vase_break_small1.ogg", "/sfx/objects/vase_break_small2.ogg" ]
+    }
+  ],
+
+  "scripts": [ "voxel.lua" ],
+  "rotationRate": 30
+}
