@@ -1,4 +1,4 @@
-function build(_, config, params)
+function build(directory, config, params, level, seed)
 	local original = root.assetJson(config.originalItem)
 
 	for k, v in pairs(original) do
@@ -8,6 +8,11 @@ function build(_, config, params)
 	end
 
 	config.image = config.image or config.inventoryIcon
+
+	if original.builder then
+		require(original.builder)
+		config, params = build(directory, config, params, level, seed)
+	end
 
 	return config, params
 end
